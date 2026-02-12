@@ -96,13 +96,16 @@ The following properties can be configured:
 			<tr>
 			<td><code>labels</code></td>
 			<td>
-				Array of label names you want to display. <br>
+					Array of label names or numeric label IDs you want to display. Label name matching is case-insensitive. <br>
 				<br><b>Possible values:</b> <code>array</code>
 				<br><b>Default value:</b> <code>[ ]</code>
 				<br><b>Example:</b> <code>["MagicMirror", "Important", "DoInTheMorning"]</code>
 				<br>
 				<br>
-				<b>This value and/or the projects entry must be specified</b>. If both projects and labels are specified, then tasks from both will be shown.
+					<b>This value and/or the projects entry must be specified</b>. If both projects and labels are specified, then tasks from both will be shown.
+					<br>
+					<br>
+					If neither `projects` nor `labels` are configured, the module will show all visible tasks from your account.
 			</td>
 		</tr>
 		<tr>
@@ -227,7 +230,16 @@ The following properties can be configured:
 </table>
 
 ## Dependencies
-- [request](https://www.npmjs.com/package/request) (installed via `npm install`)
+- `axios` and `showdown` (installed via `npm install` in the module folder)
+
+Run the following after cloning the module into your `modules` folder:
+
+```bash
+cd modules/MMM-Todoist
+npm install
+```
+
+If the module can't find these dependencies at runtime it will log an error advising to run `npm install` in the module folder.
 
 
 # Screen shots
